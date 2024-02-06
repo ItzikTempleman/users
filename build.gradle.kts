@@ -28,10 +28,10 @@ repositories {
 tasks {
     withType<JavaCompile> {
         kotlin {
-            jvmToolchain(8)
+            jvmToolchain(11)
         }
-        sourceCompatibility = JavaVersion.VERSION_1_8.toString()
-        targetCompatibility = JavaVersion.VERSION_1_8.toString()
+        sourceCompatibility = JavaVersion.VERSION_11.toString()
+        targetCompatibility = JavaVersion.VERSION_11.toString()
     }
     create("stage").dependsOn("installDist")
 }
