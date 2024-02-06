@@ -12,9 +12,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
 
-//application {
-//    mainClass = "com.users.Application"
-//}
 group = "com.users"
 version = "0.0.1"
 
@@ -30,6 +27,10 @@ repositories {
 }
 
 tasks {
+    withType<JavaCompile>{
+        targetCompatibility = JavaVersion.VERSION_1_8.toString()
+        sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+    }
     create("stage").dependsOn("installDist")
 }
 
