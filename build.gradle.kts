@@ -28,8 +28,8 @@ repositories {
 
 tasks {
     withType<JavaCompile>{
-        targetCompatibility = JavaVersion.VERSION_1_8.toString()
-        sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+        targetCompatibility = JavaVersion.VERSION_1_9.toString()
+        sourceCompatibility = JavaVersion.VERSION_1_9.toString()
     }
     create("stage").dependsOn("installDist")
 }
