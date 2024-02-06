@@ -3,7 +3,7 @@ val kotlin_version: String by project
 val logback_version: String by project
 
 val exposed_version: String by project
-val h2_version: String by project
+
 plugins {
     application
     kotlin("jvm") version "1.9.22"
@@ -26,9 +26,6 @@ repositories {
 }
 
 tasks {
-    withType<JavaCompile> {
-        options.release = 8
-    }
     create("stage").dependsOn("installDist")
 }
 
@@ -38,7 +35,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
-    implementation("com.h2database:h2:$h2_version")
+    implementation("com.h2database:h2: 2.2.220")
     implementation("io.ktor:ktor-serialization-gson-jvm")
     implementation("io.ktor:ktor-server-default-headers-jvm")
     implementation("io.ktor:ktor-server-host-common-jvm")
