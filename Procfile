@@ -1,1 +1,1 @@
-web: ./build/install/com.users/bin/users
+web: ./build/install/com.users/bin/com.users

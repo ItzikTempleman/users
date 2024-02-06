@@ -12,6 +12,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
 
+application {
+    mainClass = "com.users.Application"
+}
 group = "com.users"
 version = "0.0.1"
 
