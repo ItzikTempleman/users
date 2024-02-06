@@ -26,6 +26,9 @@ repositories {
 }
 
 tasks {
+    withType<JavaCompile> {
+        options.release = 8
+    }
     create("stage").dependsOn("installDist")
 }
 
