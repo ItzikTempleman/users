@@ -25,7 +25,7 @@ fun Route.userRouting() {
             val id =
                 call.parameters["id"] ?: return@get call.respondText("missing id", status = HttpStatusCode.BadRequest)
             val user = users.find { it.id == id } ?: return@get call.respondText(
-                "No user found with the id number $id",
+                "No user was found with the id number $id",
                 status = HttpStatusCode.NotFound
             )
 

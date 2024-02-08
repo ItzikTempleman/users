@@ -5,22 +5,30 @@ val h2databas: String by project
 val exposed_version: String by project
 
 plugins {
-    id("application")
     kotlin("jvm") version "1.9.22"
+    id("application")
     id("io.ktor.plugin") version "2.3.7"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
 }
 
 group = "com.users"
 version = "0.0.1"
 
 application {
-   // mainClass.set("io.ktor.server.netty.EngineMain")
-    mainClass.set("com.usrs.ApplicationKt")
+    mainClass.set("io.ktor.server.netty.EngineMain")
+
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
+
+
 
 repositories {
     mavenCentral()
@@ -30,6 +38,7 @@ tasks.create("stage").dependsOn("installDist")
 
 
 dependencies {
+    implementation("io.ktor:ktor-server-status-pages-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
