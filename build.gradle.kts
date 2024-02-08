@@ -15,13 +15,16 @@ plugins {
 //        languageVersion.set(JavaLanguageVersion.of(8))
 //    }
 //}
-
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 group = "com.users"
 version = "0.0.1"
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
-
+    //mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("com.usrs.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
