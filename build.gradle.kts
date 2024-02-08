@@ -2,6 +2,7 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val exposed_version: String by project
+val h2_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.22"
@@ -18,8 +19,8 @@ group = "com.users"
 version = "0.0.1"
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
-    //mainClass.set("com.usrs.Application.Kt")
+   mainClass.set("io.ktor.server.netty.EngineMain")
+   // mainClass.set("com.usrs.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -35,6 +36,7 @@ tasks.create("stage").dependsOn("installDist")
 
 
 dependencies {
+    implementation ("com.h2database:h2:$h2_version")
     implementation("io.ktor:ktor-server-status-pages-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
