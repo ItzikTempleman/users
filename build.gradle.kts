@@ -38,8 +38,6 @@ dependencies {
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-call-logging-jvm")
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
-    implementation("org.apache.logging.log4j:log4j-api:2.14.1")
-    implementation("ch.qos.logback:logback-classic:1.4.12")
     implementation ("com.h2database:h2:$h2_version")
     implementation("io.ktor:ktor-server-status-pages-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
