@@ -1,3 +1,4 @@
+import java.util.regex.Pattern.compile
 
 val ktor_version: String by project
 val kotlin_version: String by project
@@ -5,6 +6,7 @@ val logback_version: String by project
 
 val exposed_version: String by project
 val h2_version: String by project
+
 plugins {
     kotlin("jvm") version "1.9.22"
     id("application")
@@ -37,6 +39,9 @@ tasks.create("stage").dependsOn("installDist")
 
 
 dependencies {
+    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
+    implementation("org.apache.logging.log4j:log4j-api:2.14.1")
+    implementation("ch.qos.logback:logback-classic:1.2.6")
     implementation ("com.h2database:h2:$h2_version")
     implementation("io.ktor:ktor-server-status-pages-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
