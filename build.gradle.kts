@@ -35,6 +35,7 @@ repositories {
 tasks.create("stage").dependsOn("installDist")
 
 dependencies {
+    implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-call-logging-jvm")
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
     implementation("org.apache.logging.log4j:log4j-api:2.14.1")
